@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <audio id="myAudio" src="welcome.mp3"></audio>
+    <audio id="myAudio2" src="youWin.mp3"></audio>
+    <audio id="myAudio3" src="yesIWin.mp3"></audio>
+    <audio id="myAudio4" src="draw.mp3"></audio>
+</head>
+<body onload="setupPage()">
+    <div class="container">
+        <div class="user_side">
+            <h1>Your Side</h1>
+            <img src="rock.png" alt="" class="rock_img" onclick="user_input_rock()">
+            <img src="paper.png" alt="" class="rock_img" onclick="user_input_paper()">
+            <img src="sci.png" alt="" class="rock_img" onclick="user_input_sic()">
+        </div>
+
+        <div class="vertical_line"></div>
+
+        <div class="computer_side">
+            <h1 class="fix">Computer Side</h1>
+            <div class="computer_move">
+                <p>Computer Move:</p>
+                <div class="move_box" id="computerMoveBox">?</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score_container">
+        <input id="user_scoreid" type="button" class="user_score" value="0">
+        <input id="com_scoreid" type="button" class="com_score" value="0">
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="startModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Welcome to Rock Paper Scissors!</h2>
+            <p>Click the button below to start the game.</p>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
